@@ -12,6 +12,7 @@ getDevice.get('/get-device', (req, res) => {
     let isWindows = false;
     let isMac = false;
     let isLinux = false;
+    let isPostMan = false;
     
     // If the device is windows, send a flag: isWindows = true
     if (whatDeviceIsThis.includes('Windows')) {
@@ -25,16 +26,21 @@ getDevice.get('/get-device', (req, res) => {
     else if (whatDeviceIsThis.includes('Linux')) {
       isLinux = true;
     }
+    // if the device is postman, send a flag: isPostMan = true
+    else if (whatDeviceIsThis.includes('PostmanRuntime')) {
+      isPostMan = true;
+    }
     //otherwise, send compete information and return
     else {
-        res.send({whatDeviceIsThis});
-        return
+      res.send({whatDeviceIsThis});
+      return;
     }
 
     res.send({
         isWindows,
         isMac,
-        isLinux   
+        isLinux,
+        isPostMan
      });
 })
     
