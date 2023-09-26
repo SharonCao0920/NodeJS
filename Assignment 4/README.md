@@ -19,4 +19,3 @@
 * Response with data posted
   
 ![image](https://github.com/SharonCao0920/NodeJS/assets/54694766/4fca8a3d-fe78-4394-8267-d508092a5123)
-
